@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue: #3b82f6;
+  --blue-light: #93c5fd;
+  --navy: #0a0f1e;
+  --navy-mid: #111827;
+  --glass: rgba(255,255,255,0.04);
+  --glass-border: rgba(59,130,246,0.2);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy);
+  color: #e8e8e8;
+  min-height: 100vh;
+}
+
+.font-display { font-family: 'Cormorant Garamond', serif; }
+
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.gold-input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(59,130,246,0.25);
+  color:black;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.gold-input:focus {
+  border-color: #3b82f6;
+  background: rgba(59,130,246,0.06);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+
+.gold-input option { background: #111827; color: #e8e8e8; }
+
+.gold-btn {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+  border: none;
+}
+
+.gold-btn:hover {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(59,130,246,0.35);
+}
+
+.gold-btn:disabled { opacity: 0.4; transform: none; cursor: not-allowed; }
+
+.ghost-btn {
+  background: transparent;
+  border: 1px solid rgba(59,130,246,0.3);
+  color: #93c5fd;
+  transition: all 0.2s;
+}
+
+.ghost-btn:hover {
+  background: rgba(59,130,246,0.08);
+  border-color: #3b82f6;
+}
+
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up { animation: fadeUp 0.5s ease forwards; }
+.fade-up-2 { animation: fadeUp 0.5s ease 0.1s forwards; opacity: 0; }
+.fade-up-3 { animation: fadeUp 0.5s ease 0.2s forwards; opacity: 0; }
